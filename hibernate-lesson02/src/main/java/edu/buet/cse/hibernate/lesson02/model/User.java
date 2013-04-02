@@ -54,6 +54,7 @@ public class User {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("userId", userId).append("userName", userName).append("createdDate", createdDate);
+    
     return builder.toString();
   }
 }

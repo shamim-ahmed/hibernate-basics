@@ -9,6 +9,7 @@
 
   <name>hibernate-lesson02</name>
   <url>http://maven.apache.org</url>
+  <description>This project demonstrates some basic features of Hibernate using annotations</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
