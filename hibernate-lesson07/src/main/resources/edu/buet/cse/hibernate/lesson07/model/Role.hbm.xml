@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping>
+  <class name="edu.buet.cse.hibernate.lesson07.model.Role" table="Role">
+    <id name="roleId" column="id" type="long">
+      <generator class="increment"/>
+    </id>
+    
+    <property name="roleName" column="name" type="string"/>
+    
+    <set name="users" table="User_Role" inverse="true" fetch="select">
+      <key>
+        <column name="role_id" not-null="true"/>
+      </key>
+      
+      <many-to-many entity-name="edu.buet.cse.hibernate.lesson07.model.User">
+        <column name="user_id" not-null="true"/>
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>
