@@ -12,7 +12,7 @@
     <property name="content" column="text" type="string"/>
     
     <many-to-one name="user" class="edu.buet.cse.hibernate.lesson05.model.User" fetch="select">
-      <column name="userId" not-null="true"/>
+      <column name="user_id" not-null="true"/>
     </many-to-one>
   </class>
 </hibernate-mapping>

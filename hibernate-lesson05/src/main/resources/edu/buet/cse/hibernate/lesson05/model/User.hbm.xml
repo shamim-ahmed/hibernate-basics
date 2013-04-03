@@ -14,7 +14,7 @@
     
     <set name="comments" table="Comment" inverse="true" lazy="true">
       <key>
-        <column name="userId" not-null="true"/>
+        <column name="user_id" not-null="true"/>
       </key>
       
       <one-to-many class="edu.buet.cse.hibernate.lesson05.model.Comment"/>
