@@ -19,7 +19,7 @@ public class Address {
   @Id
   @GenericGenerator(name = "generator", strategy = "foreign", parameters = {@Parameter(name="property", value="user")})
   @GeneratedValue(generator = "generator")
-  @Column(name = "userId")
+  @Column(name = "user_id")
   private Long userId;
   
   @Column(name = "street")

@@ -8,14 +8,14 @@ CREATE TABLE User (
 );
 
 CREATE TABLE Address (
-  userId INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
   street VARCHAR(50) NOT NULL,
   city VARCHAR(50) NOT NULL,
   state VARCHAR(50),
   country VARCHAR(50) NOT NULL,
-  CONSTRAINT address_pk PRIMARY KEY (userId),
-  CONSTRAINT address_fk_userId FOREIGN KEY (userId) REFERENCES User(id)
+  CONSTRAINT address_pk PRIMARY KEY (user_id),
+  CONSTRAINT address_fk_user_id FOREIGN KEY (user_id) REFERENCES User(id)
 );
 
 INSERT INTO User (id, name, createdDate) VALUES (1, 'shamim', '2013-04-03');
-INSERT INTO Address (userId, Street, City, State, Country) VALUES (1, '14/142 Herring Road', 'Sydney', 'NSW', 'Australia');
+INSERT INTO Address (user_id, Street, City, State, Country) VALUES (1, '14/142 Herring Road', 'Sydney', 'NSW', 'Australia');
