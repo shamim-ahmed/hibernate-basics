@@ -9,7 +9,7 @@
 
   <name>hibernate-lesson04</name>
   <url>http://maven.apache.org</url>
-  <description>A simple project that demonstrates how to model one-to-one mapping using Hibernate configuration files</description>
+  <description>A simple project that demonstrates how to model one-to-one mapping using Hibernate annotations</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
