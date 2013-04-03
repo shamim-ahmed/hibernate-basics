@@ -9,7 +9,7 @@
       <generator class="increment" />
     </id>
 
-    <property name="userName" type="string" column="name" />
+    <property name="username" type="string" column="name" />
     <property name="createdDate" type="date" column="createdDate" />
     
     <one-to-one name="address" class="edu.buet.cse.hibernate.lesson03.model.Address" cascade="save-update"/>

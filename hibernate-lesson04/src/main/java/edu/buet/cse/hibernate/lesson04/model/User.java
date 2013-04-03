@@ -22,7 +22,7 @@ public class User {
   private Long userId;
   
   @Column(name = "name")
-  private String userName;
+  private String username;
   
   @Column(name = "createdDate")
   private Date createdDate;
@@ -38,12 +38,12 @@ public class User {
     this.userId = userId;
   }
 
-  public String getUserName() {
-    return userName;
+  public String getUsername() {
+    return username;
   }
 
-  public void setUserName(String userName) {
-    this.userName = userName;
+  public void setUsername(String userName) {
+    this.username = userName;
   }
 
   public Date getCreatedDate() {
@@ -66,7 +66,7 @@ public class User {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("userId", userId)
-           .append("userName", userName)
+           .append("username", username)
            .append("createdDate", createdDate)
            .append("address", String.format("%s, %s, %s, %s", address.getStreet(), address.getCity(), address.getState(), address.getCountry()));
     

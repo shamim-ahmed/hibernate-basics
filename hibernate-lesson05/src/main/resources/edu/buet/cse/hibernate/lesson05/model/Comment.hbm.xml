@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+         
+<hibernate-mapping>
+  <class name="edu.buet.cse.hibernate.lesson05.model.Comment" table="Comment">
+    <id name="commentId" column="id" type="long">
+      <generator class="increment"></generator>
+    </id>
+    
+    <property name="content" column="text" type="string"/>
+    
+    <many-to-one name="user" class="edu.buet.cse.hibernate.lesson05.model.User" fetch="select">
+      <column name="userId" not-null="true"/>
+    </many-to-one>
+  </class>
+</hibernate-mapping>

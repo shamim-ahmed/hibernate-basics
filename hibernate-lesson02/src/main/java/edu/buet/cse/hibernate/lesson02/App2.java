@@ -16,7 +16,7 @@ public class App2 {
     try {
       session = HibernateUtil.getSession();
       User user = new User();
-      user.setUserName("linus");
+      user.setUsername("linus");
       user.setCreatedDate(new Date());
       
       Transaction tx = session.beginTransaction();

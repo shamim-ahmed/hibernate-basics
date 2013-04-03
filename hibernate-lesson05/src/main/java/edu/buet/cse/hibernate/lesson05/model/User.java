@@ -1,6 +1,7 @@
-package edu.buet.cse.hibernate.lesson03.model;
+package edu.buet.cse.hibernate.lesson05.model;
 
 import java.util.Date;
+import java.util.Set;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -9,8 +10,8 @@ public class User {
   private Long userId;
   private String username;
   private Date createdDate;
-  private Address address;
-  
+  private Set<Comment> comments;
+
   public Long getUserId() {
     return userId;
   }
@@ -34,23 +35,23 @@ public class User {
   public void setCreatedDate(Date createdDate) {
     this.createdDate = createdDate;
   }
-  
-  public Address getAddress() {
-    return address;
+
+  public Set<Comment> getComments() {
+    return comments;
   }
 
-  public void setAddress(Address address) {
-    this.address = address;
+  public void setComments(Set<Comment> comments) {
+    this.comments = comments;
   }
-  
+
   @Override
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("userId", userId)
            .append("username", username)
            .append("createdDate", createdDate)
-           .append("address", String.format("%s, %s, %s, %s", address.getStreet(), address.getCity(), address.getState(), address.getCountry()));
-    
+           .append("commentCount", comments.size());
+
     return builder.toString();
   }
 }

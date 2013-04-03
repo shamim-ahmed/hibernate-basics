@@ -7,7 +7,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class User {
   private Long userId;
-  private String userName;
+  private String username;
   private Date createdDate;
 
   public Long getUserId() {
@@ -18,12 +18,12 @@ public class User {
     this.userId = userId;
   }
 
-  public String getUserName() {
-    return userName;
+  public String getUsername() {
+    return username;
   }
 
-  public void setUserName(String userName) {
-    this.userName = userName;
+  public void setUsername(String userName) {
+    this.username = userName;
   }
 
   public Date getCreatedDate() {
@@ -38,7 +38,7 @@ public class User {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("userId", userId)
-           .append("userName", userName)
+           .append("username", username)
            .append("createdDate", createdDate);
     return builder.toString();
   }

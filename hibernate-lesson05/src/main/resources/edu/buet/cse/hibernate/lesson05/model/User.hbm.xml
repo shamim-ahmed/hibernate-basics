@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping>
+  <class name="edu.buet.cse.hibernate.lesson05.model.User" table="User">
+    <id name="userId" column="id" type="long">
+      <generator class="increment"/>
+    </id>
+    
+    <property name="username" column="name" type="string"/>
+    <property name="createdDate" column="createdDate" type="date"/>
+    
+    <set name="comments" table="Comment" inverse="true" lazy="true">
+      <key>
+        <column name="userId" not-null="true"/>
+      </key>
+      
+      <one-to-many class="edu.buet.cse.hibernate.lesson05.model.Comment"/>
+    </set>
+  </class>
+</hibernate-mapping>

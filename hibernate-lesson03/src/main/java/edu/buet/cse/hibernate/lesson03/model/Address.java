@@ -63,7 +63,7 @@ public class Address {
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("userId", userId)
-           .append("userName", user.getUserName())
+           .append("userName", user.getUsername())
            .append("street", street)
            .append("city", city)
            .append("state", state)
