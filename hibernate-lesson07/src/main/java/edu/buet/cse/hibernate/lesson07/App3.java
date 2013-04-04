@@ -10,7 +10,10 @@ import edu.buet.cse.hibernate.lesson07.model.Role;
 import edu.buet.cse.hibernate.lesson07.model.User;
 import edu.buet.cse.hibernate.lesson07.util.HibernateUtil;
 
-// create a new user, then attach a pre-existing role with him
+// create a new user, then attach a pre-existing role with him.
+// WARNING : This example has a serious problem. Every time we try to
+// create a new entry in the join table, all the previous entries are deleted and re-created.
+// I need to find a solution for this.
 public class App3 {
   public static void main(String... args) {
     Session session = null;
