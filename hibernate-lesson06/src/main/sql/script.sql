@@ -1,8 +1,3 @@
-/*
-  The Address table was used in some previous examples. It has a foreign key based
-  relationship with User table, so it should be removed first. 
-*/
-DROP TABLE IF EXISTS Address;
 DROP TABLE IF EXISTS Comment;
 DROP TABLE IF EXISTS User;
 
@@ -15,8 +10,8 @@ CREATE TABLE User (
 CREATE TABLE Comment (
   id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   text VARCHAR(500) NOT NULL,
-  user_id INTEGER NOT NULL,
-  CONSTRAINT comment_user_fk FOREIGN KEY (user_id) REFERENCES User(id)
+  user_id INTEGER,
+  CONSTRAINT comment_user_fk FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE SET NULL
 );
 
 INSERT INTO User (id, name, createdDate) VALUES (1, 'shamim', '2013-04-03');

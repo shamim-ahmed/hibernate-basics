@@ -1,8 +1,11 @@
 package edu.buet.cse.hibernate.lesson06.model;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,14 +26,14 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long userId;
   
-  @Column(name = "name")
+  @Column(name = "name", nullable = false)
   private String username;
   
-  @Column(name = "createdDate")
+  @Column(name = "createdDate", nullable = false)
   private Date createdDate;
   
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-  private Set<Comment> comments;
+  @OneToMany(mappedBy = "user", cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
+  private Set<Comment> comments = new LinkedHashSet<>();
 
   public Long getUserId() {
     return userId;
@@ -57,11 +60,15 @@ public class User {
   }
 
   public Set<Comment> getComments() {
-    return comments;
+    return Collections.unmodifiableSet(comments);
   }
 
   public void setComments(Set<Comment> comments) {
     this.comments = comments;
+  }
+  
+  public void addComment(Comment comment) {
+    comments.add(comment);
   }
 
   @Override
