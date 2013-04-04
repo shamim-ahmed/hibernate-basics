@@ -16,6 +16,8 @@ public class App4 {
       User user = (User) session.get(User.class, 1L);
       
       Transaction tx = session.beginTransaction();
+      // this will result in user_id being set to NULL in all comments belonging to this user
+      // due to ON DELETE SET NULL in table definition
       session.delete(user);
       tx.commit();
       
