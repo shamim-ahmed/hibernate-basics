@@ -22,20 +22,20 @@ public class Address {
   @Column(name = "user_id")
   private Long userId;
   
-  @Column(name = "street")
+  @Column(name = "street", nullable = false)
   private String street;
   
-  @Column(name = "city")
+  @Column(name = "city", nullable = false)
   private String city;
   
   @Column(name = "state")
   private String state;
   
-  @Column(name = "country")
+  @Column(name = "country", nullable = false)
   private String country;
   
   @OneToOne
-  @PrimaryKeyJoinColumn
+  @PrimaryKeyJoinColumn(name = "user_id")
   private User user;
   
   public Long getUserId() {

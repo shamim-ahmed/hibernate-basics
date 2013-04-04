@@ -22,10 +22,10 @@ public class User {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long userId;
   
-  @Column(name = "name")
+  @Column(name = "name", nullable = false)
   private String username;
   
-  @Column(name = "createdDate")
+  @Column(name = "createdDate", nullable = false)
   private Date createdDate;
   
   @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
