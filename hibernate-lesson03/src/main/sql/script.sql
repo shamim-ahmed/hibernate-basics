@@ -14,7 +14,7 @@ CREATE TABLE Address (
   state VARCHAR(50),
   country VARCHAR(50) NOT NULL,
   CONSTRAINT address_pk PRIMARY KEY (user_id),
-  CONSTRAINT address_fk_user_id FOREIGN KEY (user_id) REFERENCES User(id)
+  CONSTRAINT address_fk_user_id FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE
 );
 
 INSERT INTO User (id, name, createdDate) VALUES (1, 'shamim', '2013-04-03');
