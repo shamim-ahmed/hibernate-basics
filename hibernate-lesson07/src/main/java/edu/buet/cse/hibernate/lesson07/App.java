@@ -16,6 +16,12 @@ public class App {
       System.out.println(user);
     } catch (HibernateException ex) {
       ex.printStackTrace(System.err);
+    } finally {
+      if (session != null) {
+        session.close();
+      }
+      
+      HibernateUtil.cleanUp();
     }
   }
 }

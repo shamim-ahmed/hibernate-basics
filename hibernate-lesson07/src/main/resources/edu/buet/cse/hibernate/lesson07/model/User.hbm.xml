@@ -9,10 +9,10 @@
       <generator class="increment"/>
     </id>
     
-    <property name="username" column="name" type="string"/>
-    <property name="createdDate" column="createdDate" type="date"/>
+    <property name="username" column="name" type="string" not-null="true"/>
+    <property name="createdDate" column="createdDate" type="date" not-null="true"/>
     
-    <set name="roles" table="User_Role" inverse="false" fetch="select">
+    <set name="roles" table="User_Role" inverse="false" fetch="select" cascade="save-update">
       <key>
         <column name="user_id" not-null="true"/>
       </key>

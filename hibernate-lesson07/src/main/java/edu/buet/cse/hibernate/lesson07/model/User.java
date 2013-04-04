@@ -2,6 +2,7 @@ package edu.buet.cse.hibernate.lesson07.model;
 
 import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -11,7 +12,7 @@ public class User {
   private Long userId;
   private String username;
   private Date createdDate;
-  private Set<Role> roles;
+  private Set<Role> roles = new LinkedHashSet<>();
 
   public Long getUserId() {
     return userId;
@@ -43,6 +44,10 @@ public class User {
 
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
+  }
+  
+  public void addRole(Role role) {
+    roles.add(role);
   }
   
   @Override
