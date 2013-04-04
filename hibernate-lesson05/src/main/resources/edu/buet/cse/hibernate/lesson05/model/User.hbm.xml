@@ -9,12 +9,12 @@
       <generator class="increment"/>
     </id>
     
-    <property name="username" column="name" type="string"/>
-    <property name="createdDate" column="createdDate" type="date"/>
+    <property name="username" column="name" type="string" not-null="true"/>
+    <property name="createdDate" column="createdDate" type="date" not-null="true"/>
     
     <set name="comments" cascade="save-update" table="Comment" inverse="true" lazy="true">
       <key>
-        <column name="user_id" not-null="true"/>
+        <column name="user_id"/>
       </key>
       
       <one-to-many class="edu.buet.cse.hibernate.lesson05.model.Comment"/>

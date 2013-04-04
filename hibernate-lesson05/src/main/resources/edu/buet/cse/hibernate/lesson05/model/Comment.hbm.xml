@@ -9,10 +9,10 @@
       <generator class="increment"></generator>
     </id>
     
-    <property name="content" column="text" type="string"/>
+    <property name="content" column="text" type="string" not-null="true"/>
     
     <many-to-one name="user" class="edu.buet.cse.hibernate.lesson05.model.User" fetch="select">
-      <column name="user_id" not-null="true"/>
+      <column name="user_id"/>
     </many-to-one>
   </class>
 </hibernate-mapping>

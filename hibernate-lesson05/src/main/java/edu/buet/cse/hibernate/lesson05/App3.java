@@ -10,6 +10,7 @@ import edu.buet.cse.hibernate.lesson05.model.Comment;
 import edu.buet.cse.hibernate.lesson05.model.User;
 import edu.buet.cse.hibernate.lesson05.util.HibernateUtil;
 
+// add a new user, along with some comments
 public class App3 {
   public static void main(String... args) {
     Session session = null;
