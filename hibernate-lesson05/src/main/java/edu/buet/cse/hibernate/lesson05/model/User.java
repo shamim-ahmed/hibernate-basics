@@ -1,6 +1,8 @@
 package edu.buet.cse.hibernate.lesson05.model;
 
+import java.util.Collections;
 import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -10,7 +12,7 @@ public class User {
   private Long userId;
   private String username;
   private Date createdDate;
-  private Set<Comment> comments;
+  private Set<Comment> comments = new LinkedHashSet<>();
 
   public Long getUserId() {
     return userId;
@@ -37,11 +39,15 @@ public class User {
   }
 
   public Set<Comment> getComments() {
-    return comments;
+    return Collections.unmodifiableSet(comments);
   }
-
+  
   public void setComments(Set<Comment> comments) {
     this.comments = comments;
+  }
+
+  public void addComment(Comment comment) {
+    comments.add(comment);
   }
 
   @Override
