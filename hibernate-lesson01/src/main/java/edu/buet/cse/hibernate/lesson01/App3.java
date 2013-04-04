@@ -22,6 +22,8 @@ public class App3 {
       user.setUsername(user.getUsername().concat("updated"));
       user.setCreatedDate(new Date());
       tx.commit();
+      
+      System.out.println("User updated successfully");
     } catch (HibernateException ex) {
       ex.printStackTrace(System.err);
     } finally {
