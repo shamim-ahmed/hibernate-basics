@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import edu.buet.cse.hibernate.lesson05.model.User;
 import edu.buet.cse.hibernate.lesson05.util.HibernateUtil;
 
+// delete a user, while keeping his comments still in DB
 public class App4 {
   public static void main(String... args) {
     Session session = null;
