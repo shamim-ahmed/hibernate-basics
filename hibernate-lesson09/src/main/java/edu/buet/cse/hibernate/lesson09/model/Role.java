@@ -1,6 +1,7 @@
 package edu.buet.cse.hibernate.lesson09.model;
 
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -22,11 +23,11 @@ public class Role {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long roleId;
   
-  @Column(name = "name")
+  @Column(name = "name", nullable = false)
   private String roleName;
   
   @ManyToMany(mappedBy = "roles")
-  private Set<User> users;
+  private Set<User> users = new LinkedHashSet<>();
 
   public Long getRoleId() {
     return roleId;
@@ -50,6 +51,10 @@ public class Role {
 
   public void setUsers(Set<User> users) {
     this.users = users;
+  }
+  
+  public void addUser(User user) {
+    users.add(user);
   }
   
   @Override
