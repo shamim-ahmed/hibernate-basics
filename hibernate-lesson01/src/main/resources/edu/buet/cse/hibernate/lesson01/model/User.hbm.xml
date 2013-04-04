@@ -5,11 +5,11 @@
           
 <hibernate-mapping>
   <class name="edu.buet.cse.hibernate.lesson01.model.User" table="User">
-    <id name="userId" column="id">
+    <id name="userId" column="id" type="long">
       <generator class="increment"/>
     </id>
     
-    <property name="username" type="string" column="name"/>
-    <property name="createdDate" type="date" column="createdDate"/>
+    <property name="username" type="string" column="name" not-null="true"/>
+    <property name="createdDate" type="date" column="createdDate" not-null="true"/>
   </class>
 </hibernate-mapping>
