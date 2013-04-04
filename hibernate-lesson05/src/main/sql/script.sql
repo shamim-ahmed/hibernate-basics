@@ -1,8 +1,3 @@
-/*
-  The Address table was used in some previous examples. It has a foreign key based
-  relationship with User table, so it should be removed first. 
-*/
-DROP TABLE IF EXISTS Address;
 DROP TABLE IF EXISTS Comment;
 DROP TABLE IF EXISTS User;
 
