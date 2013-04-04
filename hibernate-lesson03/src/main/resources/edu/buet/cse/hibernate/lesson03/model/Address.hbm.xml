@@ -13,9 +13,9 @@
     
     <one-to-one name="user" class="edu.buet.cse.hibernate.lesson03.model.User" constrained="true"/>
     
-    <property name="street" column="street"/>
-    <property name="city" column="city"/>
+    <property name="street" column="street" not-null="true"/>
+    <property name="city" column="city" not-null="true"/>
     <property name="state" column="state"/>
-    <property name="country" column="country"/>
+    <property name="country" column="country" not-null="true"/>
   </class>
 </hibernate-mapping>

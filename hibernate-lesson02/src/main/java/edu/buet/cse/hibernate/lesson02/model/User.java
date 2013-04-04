@@ -17,13 +17,13 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class User {
   @Id
   @Column(name = "id")
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long userId;
 
-  @Column(name = "name")
+  @Column(name = "name", nullable = false)
   private String username;
   
-  @Column(name = "createdDate")
+  @Column(name = "createdDate", nullable = false)
   private Date createdDate;
 
   public Long getUserId() {
