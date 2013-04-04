@@ -1,4 +1,4 @@
-package edu.buet.cse.hibernate.lesson03;
+package edu.buet.cse.hibernate.lesson04;
 
 import java.util.Date;
 
@@ -6,9 +6,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import edu.buet.cse.hibernate.lesson03.model.Address;
-import edu.buet.cse.hibernate.lesson03.model.User;
-import edu.buet.cse.hibernate.lesson03.util.HibernateUtil;
+import edu.buet.cse.hibernate.lesson04.model.Address;
+import edu.buet.cse.hibernate.lesson04.model.User;
+import edu.buet.cse.hibernate.lesson04.util.HibernateUtil;
 
 // create a new user and address
 public class App3 {

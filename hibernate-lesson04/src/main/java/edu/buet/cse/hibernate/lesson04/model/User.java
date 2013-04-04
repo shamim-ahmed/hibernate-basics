@@ -2,6 +2,7 @@ package edu.buet.cse.hibernate.lesson04.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class User {
   @Column(name = "createdDate")
   private Date createdDate;
   
-  @OneToOne(mappedBy = "user")
+  @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
   private Address address;
   
   public Long getUserId() {
