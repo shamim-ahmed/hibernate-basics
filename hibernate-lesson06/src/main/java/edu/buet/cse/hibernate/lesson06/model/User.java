@@ -5,7 +5,6 @@ import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +16,7 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "User")
@@ -32,7 +32,8 @@ public class User {
   @Column(name = "createdDate", nullable = false)
   private Date createdDate;
   
-  @OneToMany(mappedBy = "user", cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+  @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
   private Set<Comment> comments = new LinkedHashSet<>();
 
   public Long getUserId() {
