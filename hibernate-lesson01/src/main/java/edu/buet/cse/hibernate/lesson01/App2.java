@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import edu.buet.cse.hibernate.lesson01.model.User;
 import edu.buet.cse.hibernate.lesson01.util.HibernateUtil;
 
+// create a User
 public class App2 {
   public static void main(String... args) {
     Session session = null;

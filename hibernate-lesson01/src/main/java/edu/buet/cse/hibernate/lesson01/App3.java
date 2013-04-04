@@ -1,20 +1,27 @@
 package edu.buet.cse.hibernate.lesson01;
 
+import java.util.Date;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import edu.buet.cse.hibernate.lesson01.model.User;
 import edu.buet.cse.hibernate.lesson01.util.HibernateUtil;
 
-// retrieve a user
-public class App {
-  public static void main(String[] args) {
+// update a User
+public class App3 {
+  public static void main(String... args) {
     Session session = null;
     
     try {
       session = HibernateUtil.getSession();
+      
+      Transaction tx = session.beginTransaction();
       User user = (User) session.get(User.class, 1L);
-      System.out.println(user);
+      user.setUsername(user.getUsername().concat("updated"));
+      user.setCreatedDate(new Date());
+      tx.commit();
     } catch (HibernateException ex) {
       ex.printStackTrace(System.err);
     } finally {
@@ -22,7 +29,6 @@ public class App {
         session.close();
       }
       
-      // call this after all sessions have been closed
       HibernateUtil.cleanUp();
     }
   }
