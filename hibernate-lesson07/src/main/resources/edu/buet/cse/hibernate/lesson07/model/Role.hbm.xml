@@ -10,6 +10,7 @@
     </id>
     
     <property name="roleName" column="name" type="string" not-null="true"/>
+    <property name="roleDescription" column="description" type="string"/>
     
     <set name="users" table="User_Role" inverse="true" fetch="select" cascade="save-update">
       <key>

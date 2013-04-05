@@ -10,6 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class Role {
   private Long roleId;
   private String roleName;
+  private String roleDescription;
   private Set<User> users = new LinkedHashSet<>();
 
   public Long getRoleId() {
@@ -26,6 +27,14 @@ public class Role {
 
   public void setRoleName(String roleName) {
     this.roleName = roleName;
+  }
+  
+  public String getRoleDescription() {
+    return roleDescription;
+  }
+
+  public void setRoleDescription(String roleDescription) {
+    this.roleDescription = roleDescription;
   }
 
   public Set<User> getUsers() {
@@ -45,6 +54,7 @@ public class Role {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("roleId", roleId)
            .append("roleName", roleName)
+           .append("roleDescription", roleDescription)
            .append("userCount", users.size());
     
     return builder.toString();
