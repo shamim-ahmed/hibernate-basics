@@ -19,12 +19,14 @@ CREATE TABLE User_Role(
   user_id INTEGER NOT NULL,
   role_id INTEGER NOT NULL,
   CONSTRAINT user_role_pk PRIMARY KEY (user_id, role_id),
-  CONSTRAINT user_id_fk FOREIGN KEY (user_id) REFERENCES User(id),
-  CONSTRAINT role_id_fk FOREIGN KEY (role_id) REFERENCES Role(id)
+  CONSTRAINT user_id_fk FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE CASCADE,
+  CONSTRAINT role_id_fk FOREIGN KEY (role_id) REFERENCES Role(id) ON DELETE CASCADE
 );
 
 INSERT INTO User (id, name, createdDate) VALUES (1, 'shamim', '2013-04-03');
 INSERT INTO User (id, name, createdDate) VALUES (2, 'linus', '2013-04-03');
+INSERT INTO User (id, name, createdDate) VALUES (3, 'tux', '2013-04-03');
+INSERT INTO User (id, name, createdDate) VALUES (4, 'ken', '2013-04-03');
 INSERT INTO Role (id, name, description) VALUES (1, 'admin', 'The administrator');
 INSERT INTO Role (id, name, description) VALUES (2, 'user', 'An ordinary user');
 INSERT INTO Role (id, name, description) VALUES (3, 'moderator', 'Content moderator');
@@ -32,3 +34,5 @@ INSERT INTO User_Role (user_id, role_id) VALUES (1, 1);
 INSERT INTO User_Role (user_id, role_id) VALUES (1, 2);
 INSERT INTO User_Role (user_id, role_id) VALUES (2, 2);
 INSERT INTO User_Role (user_id, role_id) VALUES (2, 3);
+INSERT INTO User_Role (user_id, role_id) VALUES (3, 1);
+INSERT INTO User_Role (user_id, role_id) VALUES (4, 3);
