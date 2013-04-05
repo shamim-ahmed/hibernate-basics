@@ -26,6 +26,9 @@ public class Role {
   @Column(name = "name", nullable = false)
   private String roleName;
   
+  @Column(name = "description", nullable = true)
+  private String roleDescription;
+  
   @ManyToMany(mappedBy = "roles")
   private Set<User> users = new LinkedHashSet<>();
 
@@ -43,6 +46,14 @@ public class Role {
 
   public void setRoleName(String roleName) {
     this.roleName = roleName;
+  }
+  
+  public String getRoleDescription() {
+    return roleDescription;
+  }
+
+  public void setRoleDescription(String roleDescription) {
+    this.roleDescription = roleDescription;
   }
 
   public Set<User> getUsers() {
@@ -62,6 +73,7 @@ public class Role {
     ToStringBuilder builder = new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE);
     builder.append("roleId", roleId)
            .append("roleName", roleName)
+           .append("roleDescription", roleDescription)
            .append("userCount", users.size());
     
     return builder.toString();
