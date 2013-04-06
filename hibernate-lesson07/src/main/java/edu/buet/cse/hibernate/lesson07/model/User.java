@@ -1,6 +1,5 @@
 package edu.buet.cse.hibernate.lesson07.model;
 
-import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -39,7 +38,7 @@ public class User {
   }
   
   public Set<Role> getRoles() {
-    return Collections.unmodifiableSet(roles);
+    return roles;
   }
 
   public void setRoles(Set<Role> roles) {
