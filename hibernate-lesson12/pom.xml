@@ -10,7 +10,7 @@
 
   <name>hibernate-lesson01</name>
   <url>http://maven.apache.org</url>
-  <description>A very simple project that demonstrates some of the most basic features of Hibernate</description>
+  <description>A simple project that demonstrates how to load hibernate configuration from a properties file</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
