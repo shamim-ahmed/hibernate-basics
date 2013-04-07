@@ -10,7 +10,7 @@
 
   <name>hibernate-lesson14</name>
   <url>http://maven.apache.org</url>
-  <description>A simple web application that uses Hibernate. For database connection, we use a connection pool configured at the web container level.</description>
+  <description>A simple web application that uses Hibernate. For database connection, we use a data source configured at the web container level.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
