@@ -10,7 +10,7 @@
 
   <name>hibernate-lesson11</name>
   <url>http://maven.apache.org</url>
-  <description>This project demonstrates how to load hibernate configuration from a custom location</description>
+  <description>This project demonstrates how to load hibernate configuration file from a custom location</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
