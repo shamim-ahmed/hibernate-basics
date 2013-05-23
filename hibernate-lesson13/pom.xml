@@ -10,7 +10,7 @@
 
   <name>hibernate-lesson13</name>
   <url>http://maven.apache.org</url>
-  <description>A simple web application that uses Hibernate. For database connection, we use plain JDBC.</description>
+  <description>A simple web application that uses Hibernate.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
